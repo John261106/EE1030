@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.6)  15 AUG 2024 11:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.6)  17 AUG 2024 21:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1332,52 +1332,7 @@ LaTeX Font Info:    Trying to load font information for TS1+txr on input line 5
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 10000) in paragraph at lines 56--63
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--82
-
- []
-
-
-Underfull \hbox (badness 2318) in paragraph at lines 87--92
-\OT1/txr/m/n/12 points of con-tact of the tan-gents to the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--92
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--107
-
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--122
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--133
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 138--142
-
- []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1387,67 +1342,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 147--152
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--162
-
- []
-
-
-Underfull \hbox (badness 1442) in paragraph at lines 167--171
-[]\OT1/txr/m/n/12 If a chord, which is not tan-gent, of the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--171
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--184
-
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 194--197
-[]\OT1/txr/m/n/12 Suppose that the nor-mals drawn at three
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 194--197
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--203
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--206
+Underfull \hbox (badness 1708) in paragraph at lines 203--205
 []\OT1/txr/m/n/12 Through the ver-tex $\OML/txmi/m/it/12 O$ \OT1/txr/m/n/12 of 
-parabola
+parabola $\OML/txmi/m/it/12 y[] \OT1/txr/m/n/12 =
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--206
-
- []
-
-[2] [3
-
-] (./main.aux)
+[2] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1456,23 +1359,23 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 3B934B75C2937D087334E962602F3028;202.
  ) 
 Here is how much of TeX's memory you used:
- 46379 strings out of 474222
- 1083659 string characters out of 5748734
+ 46378 strings out of 474222
+ 1083653 string characters out of 5748734
  1967975 words of memory out of 5000000
  67860 multiletter control sequences out of 15000+600000
  616338 words of font info for 151 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 101i,7n,103p,1172b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,7n,103p,1172b,581s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on main.pdf (3 pages, 51989 bytes).
+Output written on main.pdf (2 pages, 51608 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
- 70 named destinations out of 1000 (max. 500000)
+ 136 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
+ 69 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
