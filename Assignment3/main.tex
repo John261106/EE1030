@@ -55,15 +55,21 @@
 \numberwithin{figure}{enumi}
 \renewcommand{\thetable}{\theenumi}
 
-\textbf{Question:}The distance of the point $(-6,8)$ from the orgin is
 
+\textbf{Question:}The distance of the point $(-6,8)$ from the orgin is\\
+\begin{table}[h!]    
+  \centering
+  \input{Tables/Table.tex}
+  \caption{Input Parameters}
+  \label{tab1.1.9.7}
+\end{table}
 \solution The length of a vector is defined as\\
 \begin{align}
 	\norm{x} &= \sqrt{x^Tx}\\
-	x &=\myvec{-6\\8} \\
-	x^Tx &=\myvec{-6, 8}\myvec{-6\\8} = 6^2=8^2=100\\
-	\norm{x} &= \sqrt{100}=10\\
-	\text{$\therefore$The distance from orgin is 10 units}
+	A &=\myvec{-6\\8} \\
+	A^TA &=\myvec{-6, 8}\myvec{-6\\8} = 6^2=8^2=100\\
+	\norm{A} &= \sqrt{100}=10\\
+	\text{$\therefore$ Length of line segment $OA$ is 10 units}
 \end{align}
 \begin{figure}[h!]
                 \centering
