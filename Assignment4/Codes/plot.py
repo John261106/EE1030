@@ -2,13 +2,19 @@ import sys
 sys.path.insert(0, '/home/john-bobby/MyRepos/matgeo/codes/CoordGeo')
 import numpy as np
 import matplotlib.pyplot as plt
+import ctypes 
 from line.funcs import *
 from triangle.funcs import *
 from conics.funcs import circ_gen
-B = np.array(([-1, -3])).reshape(-1,1)
-A = np.array(([1, 3])).reshape(-1,1)
-C = np.array(([3, -1])).reshape(-1,1)
-D = np.array(([-3, 1])).reshape(-1,1)
+libslope=ctypes.CDLL('./slope.so')
+libslope.slope.argtypes = (ctypes.c_double,ctypes.c_double,ctypes.c_double)
+libslope.slope.restype = ctypes.c_double
+m=libslope.slope(3,-1,0)
+print(m)
+B = np.array(([-1, -1*m])).reshape(-1,1)
+A = np.array(([1, m])).reshape(-1,1)
+C = np.array(([m, -1])).reshape(-1,1)
+D = np.array(([-1*m, 1])).reshape(-1,1)
 x_AB=line_gen(A,B)
 x_CD=line_gen(C,D)
 plt.plot(x_AB[0,:], x_AB[1,:], label='$AB$')

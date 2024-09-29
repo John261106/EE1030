@@ -65,13 +65,21 @@
   \label{tab4.4.2.11}
 \end{table}
 
-\solution Any line can be represented\\
+\solution \\
 \begin{align}
-\vec{x} &=\vec{h}+k\vec{m}\\
-\vec{m} &=\myvec{1\\m} \text{(where m is the slope of the line)}\\
-	\vec{n} &=\myvec{-m\\1}\\
- m&=3\\
-	\therefore \vec{m}=\myvec{1\\3},\vec{n}=\myvec{-3\\1}
+	y&=3x\\
+	\myvec{-3 & 1}\myvec{x\\y}&=0\\
+	\vec{n}^\top \vec{x} &=c\\
+	\implies \vec{n}&=\myvec{-3\\ 1}\\
+	\vec{m}^\top \vec{n} &= 0\\
+	\myvec{1 & m}\myvec{-3 \\ 1}&=0\\
+	-3+m &=0\\
+	\implies m &= 3
+\end{align}
+the normal vector and the direction vector of the line $y=3x$ can be represented as $\vec{n}$ and $\vec{m}$\\
+\begin{align}
+	\vec{m} &= \myvec{1\\3}\\
+	\vec{n} &= \myvec{-3\\1}
 \end{align}
 \begin{figure}[h!]
                 \centering
