@@ -1,0 +1,1 @@
+The area enclosed by the parabola between the lines x=0 and x=1 is 1.332320

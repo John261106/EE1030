@@ -28,7 +28,7 @@ x_1 = line_gen(C, D)
 
 
 math_functions.compute_values(x.ctypes.data_as(ctypes.POINTER(ctypes.c_double)),y.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), len(x))
-print(f"The Area enclosed by the curve between x=0 and x=1 is {math_functions.computeArea(0,1,1000)}")
+
 
 
 plt.ylim([0, 6]) 
