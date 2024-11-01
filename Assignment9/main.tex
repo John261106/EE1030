@@ -1,0 +1,165 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}
+\usepackage{ circuitikz }
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+% Marks the beginning of the document
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{\textbf{GATE 2018 ME}}
+\author{EE24BTECH11032- John Bobby}
+\maketitle
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\columnsep}{2.5em}
+\begin{enumerate}
+    \item $F\brak{z}$ is a function of the complex variable $z=x+iy$ given by $F\brak{z}=iz+kRe\brak{z}+iIm\brak{z}$.For what value of k will $F\brak{z}$ satisfy the Cauchy-Rienmann equations?
+    \begin{enumerate}
+        \item $0$
+        \item $1$
+        \item $-1$
+        \item $y$
+    \end{enumerate}
+    \item A bar of uniform cross section and weighing $100$N is held horizontally using two massless and inextensible strings S1 and S2 as shown in the figure.\\
+    \input{figs/fig1.tex}
+    \begin{enumerate}
+        \item $T_1=100N$ and $T_2=0N$
+        \item $T_1=0N$ and $T_2=100N$
+        \item $T_1=75N$ and $T_2=25N$
+        \item $T_1=25N$ and $T_2=75N$
+    \end{enumerate}
+    \item If $\sigma_1$ and $\sigma_2$ are the algebraically largest and smallest principal stresses respectively, the value of the maximum shear stress is
+    \begin{enumerate}
+        \item $\frac{\sigma_1+\sigma_3}{2}$
+        \item $\frac{\sigma_1-\sigma_3}{2}$
+        \item $\sqrt{\frac{\sigma_1+\sigma_3}{2}}$
+        \item $\sqrt{\frac{\sigma_1-\sigma_3}{2}}$
+    \end{enumerate}
+    \item The equation of motion for a spring-mass system excited by a harmonic force is $M\Ddot{x}+Kx=F\cos{\omega t}$, where the M is the mass, K is the spring stiffness, F is the force amplitude and $\omega$ is the angular frequency of excitation. Resonance occurs when $\omega$ is equal to 
+    \begin{enumerate}
+        \item $\sqrt{\frac{M}{K}}$
+        \item $\frac{1}{2\pi}\sqrt{\frac{K}{M}}$
+        \item $2\pi\sqrt{\frac{K}{M}}$
+        \item $\sqrt{\frac{K}{M}}$
+    \end{enumerate}
+    \item For an Oldham coupling used between two shafts, which among the following statements are correct?\\
+    A.\quad Torsional load is transferred along the shaft axis.\\
+    B. \quad A velocity ratio of $1:2$ between shafts is obtained without using gears\\
+    C. \quad Bending load is transferred transverse to shaft axis.\\
+    D. \quad Rotation is transferred along the shaft axis.
+    \begin{enumerate}
+        \item A and C
+        \item A and D
+        \item B and C
+        \item B and D
+    \end{enumerate}
+    \item For a two dimensional incompressible flow field given by $\vec{u}=A\brak{x\hat{i}-y\hat{j}}$, where $A>0$, which one of the following statements is FALSE?
+    \begin{enumerate}
+        \item It satisfies continuity equation.
+        \item It is unidirectional when $x \to 0$ and $y \to \infty$.
+        \item Its streamlines are given by $x=y$.
+        \item It is irrotational.
+    \end{enumerate}
+    \item Which one of the following statements is correct for superheated vapour?
+    \begin{enumerate}
+        \item Its pressure is less than the saturation pressure at a given temperature.
+        \item Its temperature is less than the saturation temperature at a given pressure.
+        \item Its volume is less than the volume of the saturated vapour at a given temperature.
+        \item Its enthalpy is less than the enthalpy of the saturated vapour at a given pressure.
+    \end{enumerate}
+    \item In a linearly hardening plastic material, the true stress beyond initial yielding 
+    \begin{enumerate}
+        \item increases linearly with the true strain
+        \item decreases linearly with the true strain
+        \item first increases linearly and then decreases linearly with the true strain
+        \item remains constant
+    \end{enumerate}
+    \item The type of weld represented by the shaded region in the figure is \\ 
+    \input{figs/fig2.tex}
+    \begin{enumerate}
+        \item groove
+        \item spot
+        \item fillet
+        \item plug
+    \end{enumerate}
+    \item Using the Taylor's tool life equation with exponent $n=0.5$, if the cutting speed is reduced by $50$, the ratio of new tool life to original tool life to original tool life is 
+    \begin{enumerate}
+        \item $4$
+        \item $2$
+        \item $1$
+        \item $0.5$
+    \end{enumerate}
+    \item A grinding ratio of $200$ implies that the 
+    \begin{enumerate}
+        \item grinding wheel wears $200$ times the volume of the material removed
+        \item grinding wheel wears $0.005$ times the volume of the material removed
+        \item aspect ratio of abrasive particles used in the grinding wheel is $200$
+        \item ratio of volume of abrasive particle to that of grinding wheel is $200$
+    \end{enumerate}
+    \item Interpolator in a CNC machine
+    \begin{enumerate}
+        \item controls spindle speed
+        \item coordinates axes movements
+        \item operates tool changer
+        \item commands canned cycle
+    \end{enumerate}
+    \item The time series forecasting method that gives equal weightage to each of the $m$ most recent observations is 
+    \begin{enumerate}
+        \item Moving average method
+        \item Exponential smoothing with linear trend
+        \item Triple Exponential smoothing 
+        \item Kalman Filter
+    \end{enumerate}
+\end{enumerate}
+
+
+
+
+\end{document}
