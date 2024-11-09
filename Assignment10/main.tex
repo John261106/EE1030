@@ -1,0 +1,192 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}
+\usepackage{ circuitikz }
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+% Marks the beginning of the document
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{\textbf{GATE 2018 ME}}
+\author{EE24BTECH11032- John Bobby}
+\maketitle
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\columnsep}{2.5em}
+\begin{enumerate}
+    \item Let F$\brak{n}$ denote the maximum number of comparisions made while searching for an entry in a sorted array of size $n$ using binary search.Which ONE of the following options in TRUE?
+    \begin{enumerate}
+        \item $F\brak{n}=F\brak{\sbrak{n/2}}+1$
+        \item $F\brak{n}=F\brak{\sbrak{n/2}}+F\brak{\sbrak{n/2}}$
+        \item $F\brak{n}=F\brak{\sbrak{n/2}}$
+        \item ${F\brak{n}=F\brak{n-1}+1}$
+    \end{enumerate}
+    \item Consider the following python function:\\
+    \begin{verbatim}
+def fun(D, s1, s2):
+    if s1 < s2:
+        D[s1], D[s2] = D[s2], D[s1]
+        fun(D, s1+1, s2-1)
+\end{verbatim}
+What does this Python function fun$\brak{}$ do? Select the ONE appropriate option below.\\
+\begin{enumerate}
+    \item It finds the smallest element in D from index s1 to s2, both inclusive.
+    \item It performs a merge sort in place in this list D between  s1 and s2, both inclusive.
+    \item It reverses the list D between indices s1 and s2, both inclusive.
+    \item It swaps the elements in D at indices s1 and s2, and leaves the remaining elements unchanged.
+\end{enumerate}
+
+
+\item Consider the table below, where the $(i, j)^{\text{th}}$ element of the table is the distance between points $x_i$ and $x_j$. Single linkage clustering is performed on data points, $x_1, x_2, x_3, x_4, x_5$.
+
+\begin{table}[h!]    
+  \centering
+  \input{tables/table1.tex}
+\end{table}
+
+Which ONE of the following is the correct representation of the clusters produced?
+  \begin{enumerate}
+      \item \input{figs/fig1.tex}
+      \item \input{figs/fig2.tex}
+      \item \input{figs/fig3.tex}
+      \item \input{figs/fig4.tex}
+  \end{enumerate}  
+  \item Consider the two neural networks (NNs) shown in Figures $1$ and $2$, with ReLU activation (ReLU$\brak{z}=max\cbrak{0,z},\forall z \in \Vec{R}$). $\Vec{R}$ denotes the set of real numbers. The connections and their corresponding weights are shown in the Figures. The biases at every neuron are set to $0$. For what values of $p,q,r$ in the Figure $2$ are the two NNs equivalent, when $x_1,x_2,x_3$ are positive? \\
+  \textbf{Figure 1}\\
+  \input{figs/fig5.tex}\\
+  \textbf{Figure 2}\\
+  \input{figs/fig6.tex}
+  \begin{enumerate}
+      \item $p=36,q=24,r=24$
+      \item $p=24,q=24,r=36$
+      \item $p=18,q=36,r=24$
+      \item $p=36,q=36,r=36$
+  \end{enumerate}
+  \item Consider a state space where the start state is number $1$. The succesor function for the state numbered $n$ returns two states numbered $n+1$ and $n+2$. Assume that the states in the unexpanded state list are expanded state list are expanded in the ascending order of numbers and the previously expanded states are not added to the unexpanded state list.Which ONE of the following statements about breadth-first search (BDS) and depth-first search (DFS) is true, when reaching the goal state number $6$?
+  \begin{enumerate}
+      \item BFS expands more states then DFS.
+      \item DFS expands more states than BFS.
+      \item Both BFS and DFS expand equal number of states.
+      \item Both BFS and DFS  do not reach the goal state number $6$.
+  \end{enumerate}
+  \item Consider the follwing sorting algorithms:\\
+  \begin{enumerate}
+      \item[(i)] Bubble sort
+      \item[(ii)] Insertion sort
+      \item[(iii)] Selection sort\\
+  \end{enumerate}
+  Which ONE among the following choices of sorting algorithms sorts the numbers in the array $\sbrak{4,3,2,1,5}$ in the increasing order after exactly two passes over the array?
+  \begin{enumerate}
+      \item (i) only
+      \item (iii) only
+      \item (i) and (iii) only
+      \item (ii) and (iii) only
+  \end{enumerate}
+  \item Given the relational schema $R=\brak{U,V,W,X,Y,Z}$ and the set of functional dependencies:\\
+  $\cbrak{U\to V,U \to W, WX \to Y,WX \to Z,V \to X}$
+  Which of the following functional dependencies can be derived from the above set?
+  \begin{enumerate}
+      \item $VW \to YZ$
+      \item $WX \to YZ$
+      \item $VW \to U$
+      \item $VW \to Y$
+  \end{enumerate}
+  \item Select all choices that are subspaces of $\Vec{R^3}$.\\
+  Note: $\vec{R}$ denotes the set of real numbers.
+  \begin{enumerate}
+      \item $\cbrak{\vec{x}=\myvec{x_1\\x_2\\x_3} \in \vec{R^3}:\vec{x}=\alpha \myvec{1\\1\\0}+\beta \myvec{1\\0\\0},\alpha,\beta \in \vec{R}}$
+      \item  $\cbrak{\vec{x}=\myvec{x_1\\x_2\\x_3} \in \vec{R^3}:\vec{x}=\alpha^2 \myvec{1\\2\\0}+\beta^2 \myvec{1\\0\\1},\alpha,\beta \in \vec{R}}$
+      \item  $\cbrak{\vec{x}=\myvec{x_1\\x_2\\x_3} \in \vec{R^3}: 5x_1+2x_3=0,4x_1-2x_2+3x_3=0}$
+      \item  $\cbrak{\vec{x}=\myvec{x_1\\x_2\\x_3} \in \vec{R^3}:5x_1+2x_3+4=0}$
+  \end{enumerate}
+  \item Which of the following statements is/are TRUE?\\
+  Note:$\vec{R}$ denotes the set of real numbers.
+  \begin{enumerate}
+      \item There exists $\vec{M}\in \vec{R}^{3\times3},p\in \vec{R}^{3}$ and $\vec{q} \in \vec{R}^3$ such that $\vec{Mx=p}$ has a unique solution and $\vec{Mx=q}$ has infinite solutions.
+      \item There exists $\vec{M}\in \vec{R}^{3\times3},p\in \vec{R}^{3}$ and $\vec{q} \in \vec{R}^3$ such that $\vec{Mx=p}$ has no solutions and $\vec{Mx=q}$ has infinite solutions.
+      \item There exists $\vec{M}\in \vec{R}^{2\times3},p\in \vec{R}^{2}$ and $\vec{q} \in \vec{R}^2$ such that $\vec{Mx=p}$ has a unique solution and $\vec{Mx=q}$ has infinite solutions.
+      \item There exists $\vec{M}\in \vec{R}^{3\times2},p\in \vec{R}^{3}$ and $\vec{q} \in \vec{R}^3$ such that $\vec{Mx=p}$ has a unique a  solution and $\vec{Mx=q}$ has no solutions.
+  \end{enumerate}
+  \item Let $\vec{R}$ be the set of real numbers, U be a subspace of $\vec{R}^3$ and $\vec{M} \in \vec{R}^{3 \times 3}$ be the matrix corresponding to the projection on to the subspace U.Which of the following statements is/are TRUE?
+  \begin{enumerate}
+      \item if U is a 1-dimensional subspace in $\vec{R}^3$, then the null space of $\vec{M}$ is a 1-dimensional subspace.
+      \item if U is a 2-dimensional subspace of $\vec{R}^3$, then the null space of $\vec{M}$ is a 1-dimensional subspace.
+      \item $\vec{M^2=M}$
+      \item $\vec{M^3=M}$
+  \end{enumerate}
+  \item Consider the function f:$\vec{R} \to \vec{R}$ where $\vec{R}$ is the set of all real numbers.\\
+  $f\brak{x}=\frac{x^4}{4}-\frac{2x^3}{3}-\frac{3x^2}{2}+1$\\
+  Which one of the following statements is/are TRUE?
+  \begin{enumerate}
+      \item $x=0$ is a local maximum of $f$
+      \item $x=3$ is a local minimum of $f$
+      \item $x=-1$ is a local maximum of $f$
+      \item $x=0$ is a local minimum of $f$
+  \end{enumerate}
+  \item Consider the directed acyclic graph (DAG) below:\\
+  \input{figs/fig7.tex}\\
+  Which of the following is/are valid vertex orderings that can be obtained from a sort of the DAG?
+  \begin{enumerate}
+      \item P Q R S T U V
+      \item P R Q V S U T
+      \item P Q R S V U T
+      \item P R Q S V T U
+  \end{enumerate}
+  \item Let H,I,L and N represent height, number of internal nodes, number of leaf nodes, and the total number of nodes respectively in a rooted binary tree.Which one of the following statements is/are always TRUE?
+  \begin{enumerate}
+      \item $L\leq I+1$
+      \item $H+1 \leq N \leq 2^{H+1}-1$
+      \item $H \leq I \leq 2^H-1$
+      \item $H \leq L \leq 2^{H-1}$
+  \end{enumerate}
+  
+
+\end{enumerate}
+\end{document}
