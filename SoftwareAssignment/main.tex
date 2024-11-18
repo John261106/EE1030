@@ -1,0 +1,178 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+% Marks the beginning of the document
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{\textbf{Software Assignment:Eigenvalue calculation}}
+\author{EE24BTECH11032- John Bobby}
+\maketitle
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\columnsep}{2.5em}
+\section{What are eigen values?}
+Given a square matrix $\vec{A}$, an eigenvalue $\lambda$ is a number such that there exists a non-zero vector $\vec{v}$ which is called the eigen vector such that \\
+$$\vec{Av}=\lambda\vec{v}$$
+\section{Jacobi's Algorithm}
+\subsection{\textbf{Theory}}
+Jacobi's algorithm is an iterative algorithm that calculates the eigen values of a real symmetric matrix. The algorithm is known for its simplicity and precision  for small or medium sized matrices. The algorithm consists of applying the Jacobi rotation till the matrix becomes diagonal matrix or close to a diagonal matrix.\\
+A Brief overview of the algorithm is given below\\
+\begin{enumerate}
+    \item Find the largest non-diagonal element $\brak{a_{ij}}$
+    \item compute $\theta=\frac{1}{2}\arctan{\frac{2a_{ij}}{a_{ii}-a_{jj}}}$
+    \item create a matrix $\vec{P}$ such that\\
+    $P_{ii}=\cos \theta$\\
+    $P_{jj}=\cos \theta$\\
+    $P_{ij}=-\sin \theta$\\
+    $P_{ji}=\sin \theta$\\
+    and the rest all elements are similar to the identity matrix.\\
+    \item apply the rotation by computing $\vec{A_i}=\vec{P}^\top \vec{AP}$\\
+    where $\vec{A_i}$ is the matrix after $i$th rotation of the given matrix $\vec{A}$\\
+    Applying the above rotation makes the maximum off diagonal elements $\brak{a_{ij},a_{ji}}$ zeroed and also maintains the symmetry. The process is continued and finally a diagonal matrix is achieved whose diagonal elements are the eigen values.\\
+\end{enumerate}
+The Advantages of the algorithm are \\
+\begin{enumerate}
+    \item \textbf{Numerical Stability for Symmetric matrices}\\
+    The algorithm works very well for symmetric matrices. As symmetric matrices have real and orthogonal eigen values the mathematical 	behavior of the algorithm is simplified.\\
+    \item \textbf{Suitable for Small or Medium sized matrices}\\
+    The algorithms converge in few iterations itself for small or medium sized matrices.\\
+    For example\\
+    $3 \times 3$ symmetric  matrix $\myvec{4 & 1 & 2 \\1 & 3 & 0\\ 2 & 0 & 5}$ converges approximately (tolerance=$10^{-8}$) to a diagonal matrix in 8 iterations.\\
+    $4 \times 4$ symmetric matrix $\myvec{7 &5& 6& 4 \\5 &3 &5& 7\\ 6& 5& 8 &6\\ 4 &7& 6 &2}$ converges approximately (tolerance=$10^{-8}$) to a diagonal matrix in 14 iterations.\\
+    \item \textbf{Accuracy for Small or Medium sized matrices}\\
+    For the $3\times3$ matrix $\myvec{4 & 1 & 2 \\1 & 3 & 0\\ 2 & 0 & 5}$ the eigen values are: $6,3,1.85$\\
+    the eigen values given by the code are: $6.66,3.47,1.85$\\
+    the values are close with real ones within an error of$1$.\\
+\end{enumerate}
+The Disadvantages of Jacobi's Algorithm are \\
+\begin{enumerate}
+    \item \textbf{Not Efficient for Large matrices}\\
+    As the convergence speed of a symmetric matrix is proportional to the size of the matrix. Large matrices need large no of iterations.\\
+    \item \textbf{Convergence Speed}\\
+    On comparing with other algorithms like QR decomposition the convergence speed is slow.\\
+    \item \textbf{Only for Symmetric matrices}\\
+    The algorithm only finds the eigen values of symmetric matrices.\\
+\end{enumerate}
+\subsection{\textbf{Time Complexity}}
+Code is available in Codes/jacobi\textunderscore iteration.c\\
+
+Time complexity analysis of the code is given below\\
+\begin{enumerate}
+    \item \textbf{larges\textunderscore off\textunderscore diag()}\\
+    The function returns the largest off diagonal element from the matrix by iterating through each element. $2$ loops are present which run for $n$ times where $n$ is the order of the matrix.\\
+    Thus the overall complexity is $O\brak{n^2}$\\
+    \item \textbf{check\textunderscore diagonal()}\\
+    The function iterates through diagonal elements and check  they are close to zero, by iterating through $2$ loops \\
+    Thus the overall complexity is $O\brak{n^2}$\\
+    \item \textbf{mult()}\\
+     Multiplies $2$ matrices and stores the result in a third matrix. The function iterates through 3 loops.\\
+     Thus the overall complexity is $O\brak{n^3}$\\
+     \item \textbf{transpose()}\\
+     Calculates the transpose and stores in another matrix. Iteration is done through $2$ loops.\\
+     Thus the overall complexity is $O\brak{n^2}$\\
+     \item \textbf{main()}\\
+     Complexity of $1$ iteration\\
+     \begin{itemize}
+         \item check\textunderscore diagonal() runs in $O\brak{n^2}$
+         \item largest\textunderscore off\textunderscore diag() runs in $O\brak{n^2}$
+         \item mult() runs $2$ times in $O\brak{n^3}$
+     \end{itemize}
+     Thus the total complexity per iteration is $O\brak{n^3}$,
+     assuming it takes $i$ iterations to converge\\
+     Overall Complexity=$O\brak{i \times n^3}$\\
+     The most computationally expensive part is the mult() function which contributes more to the overall complexity.
+\end{enumerate}
+\subsection{\textbf{Memory Usage}}
+The memory usage analysis of the code ignoring all the stack variables is given below\\
+\begin{enumerate}
+    \item \textbf{Static Memory}\\
+    The static variables used are 
+    \begin{itemize}
+        \item int (size=$4$bytes) $n$, max\textunderscore iter, iter. Total=$12$bytes
+        \item double (size=$8$bytes), A[n][n], S[n][n], St[n][n], temp[n][n], temp2[n][n], theta. Total=$40n^2+8$bytes
+    \end{itemize}
+    \item \textbf{Dynamic Memory}\\
+    The dynamic variable used are 
+    \begin{itemize}
+        \item  int  * (size=$2 \times 8$) result. Total=$16$bytes
+    \end{itemize}
+\end{enumerate}
+Thus the overall memory usage $=12+40n^2+8+16=40n^2+36$ which is of $O\brak{n^2}$
+\subsection{Comparison}
+On comparing with QR algorithm, Power Iteration Method and Lanczo's Algorithm\\
+\begin{enumerate}
+    \item \textbf{Similarities}\\
+    \begin{itemize}
+        \item All $3$ algorithms are iterative in nature, and the solutions are approximate.\\
+        \item All the algorithms consists of repetitive matrix multiplication until a specific condition is reached.\\
+        \item The rate of convergence depends on the properties of the matrix like size and symmetry.\\
+    \end{itemize}
+    \item \textbf{Differences}\\
+    \begin{itemize}
+        \item Lanczo's and Jacobi's are  only applied to symmetric matrices whereas Power Iteration and QR is applied to all matrices.\\
+        \item Power iteration only finds the largest eigen value in magnitude whereas others find all the eigen values. Also it is a very simple and efficient algorithm when we need only the largest eigen value.\\
+        \item Lanczo's algorithm is useful for large sparse(most of elements are $0$) as the complexity is of $O\brak{m \times n}$, where $m$ is the number of non-zero elements and $n$ is the order.\\
+        \item In terms of convergence speed Jacobi's take time to converge for large matrices which is overcome by QR algorithm. The convergence of the Power iteration depends on the difference between the largest and the second largest, less the gap more the  multiplications need to be done so that the term due to largest eigen value dominates.\\
+        \item Even though QR can handle assymetric matrices the number of iterations needed is too much large.\\
+    \end{itemize}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
