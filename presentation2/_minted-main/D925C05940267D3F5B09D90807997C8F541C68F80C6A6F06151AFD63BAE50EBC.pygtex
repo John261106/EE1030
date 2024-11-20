@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{sys}
+\PYG{n}{sys}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{insert}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}/home/john\PYGZhy{}bobby/MyRepos/matgeo/codes/CoordGeo\PYGZsq{}}\PYG{p}{)}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{import} \PYG{n+nn}{ctypes}
+\PYG{k+kn}{from} \PYG{n+nn}{line.funcs} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{k+kn}{from} \PYG{n+nn}{triangle.funcs} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{k+kn}{from} \PYG{n+nn}{conics.funcs} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{n}{math\PYGZus{}functions} \PYG{o}{=} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{CDLL}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}./parabola.so\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{math\PYGZus{}functions}\PYG{o}{.}\PYG{n}{compute\PYGZus{}values}\PYG{o}{.}\PYG{n}{argtypes} \PYG{o}{=} \PYG{p}{(}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{POINTER}\PYG{p}{(}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}double}\PYG{p}{),} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{POINTER}\PYG{p}{(}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}double}\PYG{p}{),} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}int}\PYG{p}{)}
+\PYG{n}{math\PYGZus{}functions}\PYG{o}{.}\PYG{n}{compute\PYGZus{}value}\PYG{o}{.}\PYG{n}{argtypes} \PYG{o}{=} \PYG{p}{[}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}double}\PYG{p}{]}
+\PYG{n}{math\PYGZus{}functions}\PYG{o}{.}\PYG{n}{compute\PYGZus{}value}\PYG{o}{.}\PYG{n}{restype} \PYG{o}{=} \PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}double}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{)}
+\PYG{n}{y} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros\PYGZus{}like}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{A} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(([}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{math\PYGZus{}functions}\PYG{o}{.}\PYG{n}{compute\PYGZus{}value}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)]))}\PYG{o}{.}\PYG{n}{reshape}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{B} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(([}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{math\PYGZus{}functions}\PYG{o}{.}\PYG{n}{compute\PYGZus{}value}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)]))}\PYG{o}{.}\PYG{n}{reshape}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{C} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(([}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]))}\PYG{o}{.}\PYG{n}{reshape}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{D} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(([}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{7}\PYG{p}{]))}\PYG{o}{.}\PYG{n}{reshape}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{x\PYGZus{}1} \PYG{o}{=} \PYG{n}{line\PYGZus{}gen}\PYG{p}{(}\PYG{n}{C}\PYG{p}{,} \PYG{n}{D}\PYG{p}{)}
+
+\end{Verbatim}

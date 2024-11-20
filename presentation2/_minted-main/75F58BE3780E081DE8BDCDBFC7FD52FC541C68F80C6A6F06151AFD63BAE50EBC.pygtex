@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{math\PYGZus{}functions}\PYG{o}{.}\PYG{n}{compute\PYGZus{}values}\PYG{p}{(}\PYG{n}{x}\PYG{o}{.}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{data\PYGZus{}as}\PYG{p}{(}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{POINTER}\PYG{p}{(}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}double}\PYG{p}{))}
+\PYG{p}{,}\PYG{n}{y}\PYG{o}{.}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{data\PYGZus{}as}\PYG{p}{(}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{POINTER}\PYG{p}{(}\PYG{n}{ctypes}\PYG{o}{.}\PYG{n}{c\PYGZus{}double}\PYG{p}{)),} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{x}\PYG{p}{))}
+\PYG{n}{points}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{block}\PYG{p}{([[}\PYG{n}{A}\PYG{p}{,}\PYG{n}{B}\PYG{p}{]])}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylim}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{])}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}y = 2√x\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x\PYGZus{}1}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{p}{:],} \PYG{n}{x\PYGZus{}1}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{p}{:],} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x=1\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{annotate}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}A(0.0,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{math\PYGZus{}functions}\PYG{o}{.}\PYG{n}{compute\PYGZus{}value}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{)\PYGZdq{}}\PYG{p}{,} \PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{math\PYGZus{}functions}\PYG{o}{.}\PYG{n}{compute\PYGZus{}value}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)),} \PYG{n}{textcoords}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}offset points\PYGZdq{}}\PYG{p}{,} \PYG{n}{xytext}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{20}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{),} \PYG{n}{ha}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}center\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{annotate}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}B(1.0,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{math\PYGZus{}functions}\PYG{o}{.}\PYG{n}{compute\PYGZus{}value}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{)\PYGZdq{}}\PYG{p}{,} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{math\PYGZus{}functions}\PYG{o}{.}\PYG{n}{compute\PYGZus{}value}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)),} \PYG{n}{textcoords}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}offset points\PYGZdq{}}\PYG{p}{,} \PYG{n}{xytext}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{20}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{),} \PYG{n}{ha}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}center\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{tri\PYGZus{}coords}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,:],} \PYG{n}{tri\PYGZus{}coords}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,:])}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Plot of y = 2√x\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}x\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}y\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{()}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{grid}\PYG{p}{()}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/home/john\PYGZhy{}bobby/MyRepos/EE1030/Assignment5/Figs/Fig1.png\PYGZdq{}}\PYG{p}{)}
+
+
+\end{Verbatim}

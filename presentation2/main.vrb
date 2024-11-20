@@ -1,0 +1,20 @@
+\frametitle{Code(plot.py)}
+\begin{minted}[bgcolor=bg, linenos, fontsize=\scriptsize, breaklines]{python}
+math_functions.compute_values(x.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
+,y.ctypes.data_as(ctypes.POINTER(ctypes.c_double)), len(x))
+points=np.block([[A,B]])
+plt.ylim([0, 6])
+plt.plot(x, y, label='y = 2√x')
+plt.plot(x_1[0, :], x_1[1, :], label='$x=1$')
+plt.annotate(f"A(0.0,{math_functions.compute_value(0)})", (0, math_functions.compute_value(0)), textcoords="offset points", xytext=(20, 5), ha='center')
+plt.annotate(f"B(1.0,{math_functions.compute_value(1)})", (1, math_functions.compute_value(1)), textcoords="offset points", xytext=(20, 5), ha='center')
+plt.scatter(tri_coords[0,:], tri_coords[1,:])
+plt.title('Plot of y = 2√x')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.grid()
+plt.savefig("/home/john-bobby/MyRepos/EE1030/Assignment5/Figs/Fig1.png")
+
+
+\end{minted}
